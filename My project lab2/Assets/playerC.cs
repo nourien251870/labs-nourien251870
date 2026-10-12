@@ -26,7 +26,7 @@ private bool grounded;
     // Update is called once per frame
     void Update()
     {
-    if (Input.GetKeyDown(spacebar))
+    if (Input.GetKeyDown(spacebar) && grounded)
         {
             Jump();
 
@@ -72,6 +72,9 @@ private bool grounded;
 
     void FixedUpdate()
     {
+
+
+        grounded = Physics2D.OverlapCircle(groungCheck.Position, groundCheckRadius, whatIsGround);
         
     }
 }
